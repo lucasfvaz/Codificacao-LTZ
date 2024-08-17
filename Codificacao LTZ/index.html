@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codificação e Decodificação LZW</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+        }
+        .output { 
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Codificação e Decodificação LZW</h1>
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2>Codificação</h2>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <textarea id="inputText" class="form-control" rows="3" placeholder="Digite o texto para codificar..."></textarea>
+                </div>
+                <button class="btn btn-primary" onclick="encodeLZW()">Codificar</button>
+                <div class="output mt-3">
+                    <h3>Saída Codificada:</h3>
+                    <pre id="encodedOutput" class="bg-light p-3"></pre>
+                </div>
+                <div class="output mt-3">
+                    <h3>Taxa de Compressão:</h3>
+                    <pre id="compressionRatio" class="bg-light p-3"></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2>Decodificação</h2>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <textarea id="encodedText" class="form-control" rows="2" placeholder="Digite o texto codificado (separado por vírgulas)..."></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea id="dictionaryText" class="form-control" rows="2" placeholder="Digite o dicionário (formato: índice: caractere, separado por vírgulas)..."></textarea>
+                </div>
+                <button class="btn btn-primary" onclick="decodeLZW()">Decodificar</button>
+                <div class="output mt-3">
+                    <h3>Saída Decodificada:</h3>
+                    <pre id="decodedOutput" class="bg-light p-3"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="lzw.js"></script>
+</body>
+</html>
